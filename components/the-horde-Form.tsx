@@ -31,8 +31,10 @@ export default function TheHordeForm() {
     const { status, message } = await addEmail(values.email);
     if (status) {
       form.reset();
+      toast.success(message);
+    } else {
+      toast.error(message);
     }
-    toast(message);
   }
 
   return (
